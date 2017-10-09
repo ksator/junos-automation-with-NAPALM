@@ -174,12 +174,16 @@ ksator@ubuntu:~$
 
 
 ## How to use NAPALM with Ansible 
-For help with Ansible https://github.com/ksator/ansible-training-for-junos-automation 
-
+- For help with Ansible you can refer to https://github.com/ksator/ansible-training-for-junos-automation 
 
 ## How to use the NAPALM pack for StackStorm
-For help with StackStorm https://github.com/ksator/junos-automation-with-stackstorm 
-For help regarding the NAPALM pack for StackStorm https://github.com/ksator/junos-automation-with-stackstorm/wiki/06.-napalm-pack
+- For help with StackStorm you can refer to https://github.com/ksator/junos-automation-with-stackstorm 
+- For help regarding the NAPALM pack for StackStorm you can refer to https://github.com/ksator/junos-automation-with-stackstorm/wiki/06.-napalm-pack
+
+
+## How to use NAPALM with SaltStack
+- For help with SaltStack you can refer to https://github.com/ksator/junos-automation-with-saltstack
+- For help with SaltStack and NAPALM you can refer to https://www.nanog.org/sites/default/files/NANOG68%20Network%20Automation%20with%20Salt%20and%20NAPALM%20Mircea%20Ulinic%20Cloudflare%20(1).pdf 
 
 
 
