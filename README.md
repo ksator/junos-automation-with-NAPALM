@@ -120,16 +120,16 @@ use a getter
  u'serial_number': u'BP0208111225',
  u'uptime': 4527600,
  u'vendor': u'Juniper'}
-'''
+```
 close the connection to the device
-'''
+```
 >>> device.is_alive()
 {u'is_alive': True}
 >>> device.close()
 >>> device.is_alive()
 {u'is_alive': False}
 >>> exit()
-'''
+```
 
 ## NAPALM and OpenConfig
 For help with OpenConfig you can refer to:  
@@ -137,8 +137,42 @@ For help with OpenConfig you can refer to:
 - https://github.com/ksator/openconfig-demo-with-juniper-devices/wiki 
 
 For help with NAPALM and OpenConfig, you can refer to: 
--  https://github.com/napalm-automation/napalm-yang/blob/develop/interactive_demo/tutorial.ipynb
+- https://github.com/napalm-automation/napalm-yang/blob/develop/interactive_demo/tutorial.ipynb
 - https://www.dravetech.com/blog/2016/05/06/oc-napalm.html
+
+Examples: 
+- [Parse native configuration and return and OpenConfig object](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/native_to_openconfig.py)
+- [Translate OpenConfig to native configuration](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/openconfig_to_native.py)
+
+## How to use NAPALM with CLI
+
+
+You can use napalm cli tool:  
+
+to get the help, run this command:  
+```
+cl_napalm_configure --help
+```
+Example with dry run:
+```
+ksator@ubuntu:~$ cl_napalm_configure --user pytraining --vendor junos --strategy merge --dry-run 172.30.177.170 napalm/conf.txt 
+Enter password: 
+[edit system]
+-  host-name mx80-17;
++  host-name newhostname;
+ksator@ubuntu:~$ 
+```
+
+
+## How to use NAPALM with Ansible 
+For help with Ansible https://github.com/ksator/ansible-training-for-junos-automation 
+
+
+## How to use the NAPALM pack for StackStorm
+For help with StackStorm https://github.com/ksator/junos-automation-with-stackstorm 
+For help regarding the NAPALM pack for StackStorm https://github.com/ksator/junos-automation-with-stackstorm/wiki/06.-napalm-pack
+
+
 
 
 
