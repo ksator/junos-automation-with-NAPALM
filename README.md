@@ -139,6 +139,8 @@ Close the connection to the device
 >>> exit()
 ```
 
+For more examples, you can look at the python scripts at the root of the repository. 
+
 ## NAPALM and OpenConfig
 For help with OpenConfig you can refer to:  
 - https://github.com/ksator/openconfig-demo-with-juniper-devices
