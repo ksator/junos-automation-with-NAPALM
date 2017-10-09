@@ -2,7 +2,13 @@
 ## About NAPALM
 
 NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support) is a Python library to interact with different network operating systems.  
-You can use napalm with Python, CLI, StackStorm, Ansible.     
+
+You can use NAPALM with: 
+- Python
+- CLI
+- StackStorm
+- Ansible     
+
 NAPALM source code: https://github.com/napalm-automation/napalm  
 NAPALM doc: https://napalm.readthedocs.io/en/latest/index.html  
 
@@ -147,9 +153,7 @@ Examples:
 ## How to use NAPALM with CLI
 
 
-You can use napalm cli tool:  
-
-to get the help, run this command:  
+To get the help, run this command:  
 ```
 cl_napalm_configure --help
 ```
