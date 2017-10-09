@@ -140,18 +140,17 @@ system {
 ```
 
 ### More examples
-For more examples, you can look at the python scripts at the root of the repository. 
+For more examples, you can look at the python scripts at the [root of the repository](https://github.com/ksator/junos-automation-with-NAPALM). 
 
 ## NAPALM and OpenConfig
 
 ### Help: 
-For help with OpenConfig you can refer to:  
-- https://github.com/ksator/openconfig-demo-with-juniper-devices
-- https://github.com/ksator/openconfig-demo-with-juniper-devices/wiki 
-
-For help with NAPALM and OpenConfig, you can refer to: 
-- https://github.com/napalm-automation/napalm-yang/blob/develop/interactive_demo/tutorial.ipynb
-- https://www.dravetech.com/blog/2016/05/06/oc-napalm.html
+- For help with OpenConfig you can refer to:  
+    - https://github.com/ksator/openconfig-demo-with-juniper-devices
+    - https://github.com/ksator/openconfig-demo-with-juniper-devices/wiki 
+- For help with NAPALM and OpenConfig, you can refer to: 
+    - https://github.com/napalm-automation/napalm-yang/blob/develop/interactive_demo/tutorial.ipynb
+    - https://www.dravetech.com/blog/2016/05/06/oc-napalm.html
 
 ### Examples: 
 - [Parse native configuration and return and OpenConfig object](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/native_to_openconfig.py)
