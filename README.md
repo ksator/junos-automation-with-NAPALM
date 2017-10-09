@@ -156,19 +156,17 @@ Examples:
 
 ## How to use NAPALM with CLI
 
-
 To get the help, run this command:  
 ```
-cl_napalm_configure --help
+napalm --help
 ```
+Configure
 Example with dry run:
 ```
-ksator@ubuntu:~$ cl_napalm_configure --user pytraining --vendor junos --strategy merge --dry-run 172.30.177.170 napalm/conf.txt 
-Enter password: 
+# napalm --user pytraining --password Poclab123 --vendor junos 172.30.177.170 configure hostname_config.txt --strategy merge --dry-run
 [edit system]
 -  host-name mx80-17;
 +  host-name newhostname;
-ksator@ubuntu:~$ 
 ```
 
 
