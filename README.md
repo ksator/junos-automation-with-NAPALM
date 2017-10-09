@@ -8,10 +8,7 @@ You can use NAPALM with:
 - [CLI](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/README.md#how-to-use-napalm-with-cli)
 - [Ansible](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/README.md#how-to-use-napalm-with-ansible)
 - [StackStorm](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/README.md#how-to-use-the-napalm-pack-for-stackstorm)
-- [SaltStack]
-
-
-
+- [SaltStack](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/README.md#how-to-use-napalm-with-saltstack)
 
 
 NAPALM source code: https://github.com/napalm-automation/napalm  
