@@ -18,13 +18,13 @@ NAPALM doc: https://napalm.readthedocs.io/en/latest/index.html
 
 For help with Python programming, you can refer to https://github.com/ksator/python-training-for-network-engineers 
 
-Installation:  
+### Installation:  
 ```
 sudo pip install napalm
 sudo pip install napalm-yang
 ```
 
-Open a connection to the device
+### Open a connection to the device
 ```
 >>> import napalm
 >>> from pprint import pprint as pp
@@ -37,7 +37,7 @@ Open a connection to the device
 {u'is_alive': True}
 >>>
 ```
-Load a configuration to the device 
+### Load a configuration to the device 
 ```
 # more hostname_config.txt
 system {
@@ -54,7 +54,7 @@ system {
 +  host-name newhostname;
 >>> device.rollback()
 ```
-Use a getter:
+### Use a getter:
 ```
 >>> pp(device.get_facts())
 {u'fqdn': u'newhostname.poc-nl.jnpr.net',
@@ -129,7 +129,7 @@ Use a getter:
  u'uptime': 4527600,
  u'vendor': u'Juniper'}
 ```
-Close the connection to the device
+### Close the connection to the device
 ```
 >>> device.is_alive()
 {u'is_alive': True}
@@ -139,9 +139,12 @@ Close the connection to the device
 >>> exit()
 ```
 
+### More examples
 For more examples, you can look at the python scripts at the root of the repository. 
 
 ## NAPALM and OpenConfig
+
+### Help: 
 For help with OpenConfig you can refer to:  
 - https://github.com/ksator/openconfig-demo-with-juniper-devices
 - https://github.com/ksator/openconfig-demo-with-juniper-devices/wiki 
@@ -150,17 +153,24 @@ For help with NAPALM and OpenConfig, you can refer to:
 - https://github.com/napalm-automation/napalm-yang/blob/develop/interactive_demo/tutorial.ipynb
 - https://www.dravetech.com/blog/2016/05/06/oc-napalm.html
 
-Examples: 
+### Examples: 
 - [Parse native configuration and return and OpenConfig object](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/native_to_openconfig.py)
 - [Translate OpenConfig to native configuration](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/openconfig_to_native.py)
 
 ## How to use NAPALM with CLI
 
+
+### Help  
 To get the help, run this command:  
 ```
 napalm --help
 ```
-Configure
+### Getters  
+
+### Commands  
+
+### Configuration  
+
 Example with dry run:
 ```
 # napalm --user pytraining --password Poclab123 --vendor junos 172.30.177.170 configure hostname_config.txt --strategy merge --dry-run
@@ -168,7 +178,7 @@ Example with dry run:
 -  host-name mx80-17;
 +  host-name newhostname;
 ```
-
+### Debug
 
 ## How to use NAPALM with Ansible 
 For help with Ansible you can refer to https://github.com/ksator/ansible-training-for-junos-automation 
