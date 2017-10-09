@@ -16,15 +16,15 @@ NAPALM doc: https://napalm.readthedocs.io/en/latest/index.html
 
 ## How to use NAPALM with Python
 
-For help with Python, you can refer to https://github.com/ksator/python-training-for-network-engineers 
+For help with Python programming, you can refer to https://github.com/ksator/python-training-for-network-engineers 
 
-installation:  
+Installation:  
 ```
 sudo pip install napalm
 sudo pip install napalm-yang
 ```
 
-open a connection to the device
+Open a connection to the device
 ```
 >>> import napalm
 >>> from pprint import pprint as pp
@@ -37,7 +37,7 @@ open a connection to the device
 {u'is_alive': True}
 >>>
 ```
-load a configuration to the device 
+Load a configuration to the device 
 ```
 # more hostname_config.txt
 system {
@@ -54,7 +54,7 @@ system {
 +  host-name newhostname;
 >>> device.rollback()
 ```
-use a getter
+Use a getter:
 ```
 >>> pp(device.get_facts())
 {u'fqdn': u'newhostname.poc-nl.jnpr.net',
@@ -129,7 +129,7 @@ use a getter
  u'uptime': 4527600,
  u'vendor': u'Juniper'}
 ```
-close the connection to the device
+Close the connection to the device
 ```
 >>> device.is_alive()
 {u'is_alive': True}
@@ -171,21 +171,15 @@ ksator@ubuntu:~$
 
 
 ## How to use NAPALM with Ansible 
-- For help with Ansible you can refer to https://github.com/ksator/ansible-training-for-junos-automation 
+For help with Ansible you can refer to https://github.com/ksator/ansible-training-for-junos-automation 
 
 ## How to use the NAPALM pack for StackStorm
 - For help with StackStorm you can refer to https://github.com/ksator/junos-automation-with-stackstorm 
 - For help regarding the NAPALM pack for StackStorm you can refer to https://github.com/ksator/junos-automation-with-stackstorm/wiki/06.-napalm-pack
 
-
 ## How to use NAPALM with SaltStack
 - For help with SaltStack you can refer to https://github.com/ksator/junos-automation-with-saltstack
 - For help with SaltStack and NAPALM you can refer to https://www.nanog.org/sites/default/files/NANOG68%20Network%20Automation%20with%20Salt%20and%20NAPALM%20Mircea%20Ulinic%20Cloudflare%20(1).pdf 
-
-
-
-
-
 
 
 
