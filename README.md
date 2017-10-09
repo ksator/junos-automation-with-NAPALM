@@ -46,7 +46,7 @@ system {
 +  host-name newhostname;
 >>> device.rollback()
 ```
-getter
+use a getter
 ```
 >>> pp(device.get_facts())
 {u'fqdn': u'newhostname.poc-nl.jnpr.net',
@@ -121,7 +121,7 @@ getter
  u'uptime': 4527600,
  u'vendor': u'Juniper'}
 '''
-close the connection
+close the connection to the device
 '''
 >>> device.is_alive()
 {u'is_alive': True}
@@ -129,5 +129,19 @@ close the connection
 >>> device.is_alive()
 {u'is_alive': False}
 >>> exit()
-```
+'''
+
+## NAPALM and OpenConfig
+For help with OpenConfig you can refer to:  
+- https://github.com/ksator/openconfig-demo-with-juniper-devices
+- https://github.com/ksator/openconfig-demo-with-juniper-devices/wiki 
+
+For help with NAPALM and OpenConfig, you can refer to: 
+-  https://github.com/napalm-automation/napalm-yang/blob/develop/interactive_demo/tutorial.ipynb
+- https://www.dravetech.com/blog/2016/05/06/oc-napalm.html
+
+
+
+
+
 
