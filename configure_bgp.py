@@ -43,4 +43,72 @@ time.sleep(20)
 for item in junos_device.get_bgp_neighbors_detail()['global']:
     print junos_device.get_bgp_neighbors_detail()['global'][item][0]['connection_state']
 
+'''
+# python ./configure_bgp.py
+------------------------------------------------------------
+rendering bgp template
+------------------------------------------------------------
+configuring device
+[edit interfaces]
++   ge-0/0/0 {
++       unit 0 {
++           description ex4200-12;
++           family inet {
++               address 192.168.10.1/31;
++           }
++       }
++   }
++   ge-0/0/1 {
++       unit 0 {
++           description ex4200-8;
++           family inet {
++               address 192.168.10.5/31;
++           }
++       }
++   }
+[edit routing-options]
++  router-id 192.179.0.107;
++  forwarding-table {
++      export bgp-ecmp;
++  }
+[edit]
++  protocols {
++      bgp {
++          group underlay {
++              type external;
++              import bgp-in;
++              export bgp-out;
++              local-as 209;
++              multipath multiple-as;
++              neighbor 192.168.10.4 {
++                  peer-as 210;
++              }
++              neighbor 192.168.10.0 {
++                  peer-as 204;
++              }
++          }
++      }
++      lldp {
++          interface ge-0/0/1.0;
++          interface ge-0/0/0.0;
++      }
++  }
++  policy-options {
++      policy-statement bgp-ecmp {
++          then {
++              load-balance per-packet;
++          }
++      }
++      policy-statement bgp-in {
++          then accept;
++      }
++      policy-statement bgp-out {
++          then accept;
++      }
++  }
+------------------------------------------------------------
+printing bgp sessions state
+Established
+Established
 
+'''
