@@ -141,6 +141,15 @@ system {
 
 ### More examples
 For more examples, you can look at the python scripts at the [root of the repository](https://github.com/ksator/junos-automation-with-NAPALM). 
+- [junos_get_config.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/junos_get_config.py)
+- [junos_get_bgp_config.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/junos_get_bgp_config.py)
+- [junos_get_bgp_neighbors.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/junos_get_bgp_neighbors.py)
+- [junos_get_bgp_neighbors_details.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/junos_get_bgp_neighbors_details.py)
+- [junos_get_facts.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/junos_get_facts.py)
+- [junos_get_interfaces.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/junos_get_interfaces.py)
+- [junos_get_lldp_neighbors.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/junos_get_lldp_neighbors.py)
+- [configure_hostname.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/configure_hostname.py)
+- [configure_bgp.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/configure_bgp.py)
 
 ## NAPALM and OpenConfig
 
