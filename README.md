@@ -440,6 +440,225 @@ Example with dry run:
 +  host-name newhostname;
 ```
 ### Debug
+```
+# napalm --debug --user pytraining --password Poclab123 --vendor junos 172.30.177.170 call cli --method-kwargs "commands=['show  version']"
+2017-10-10 09:50:15,573 - napalm - DEBUG - Starting napalm's debugging tool
+2017-10-10 09:50:15,573 - napalm - DEBUG - Gathering napalm packages
+2017-10-10 09:50:15,598 - napalm - DEBUG - napalm-base==0.25.0
+2017-10-10 09:50:15,598 - napalm - DEBUG - napalm-eos==0.6.1
+2017-10-10 09:50:15,598 - napalm - DEBUG - napalm-fortios==0.4.0
+2017-10-10 09:50:15,598 - napalm - DEBUG - napalm-ios==0.8.0
+2017-10-10 09:50:15,598 - napalm - DEBUG - napalm-iosxr==0.5.4
+2017-10-10 09:50:15,598 - napalm - DEBUG - napalm-junos==0.12.0
+2017-10-10 09:50:15,598 - napalm - DEBUG - napalm-nxos==0.7.0
+2017-10-10 09:50:15,598 - napalm - DEBUG - napalm-panos==0.4.0
+2017-10-10 09:50:15,598 - napalm - DEBUG - napalm-pluribus==0.5.1
+2017-10-10 09:50:15,599 - napalm - DEBUG - napalm-ros==0.2.2
+2017-10-10 09:50:15,599 - napalm - DEBUG - napalm-vyos==0.1.3
+2017-10-10 09:50:15,599 - napalm - DEBUG - napalm-yang==0.0.7
+2017-10-10 09:50:15,599 - napalm - DEBUG - napalm==1.2.0
+2017-10-10 09:50:15,599 - napalm - DEBUG - get_network_driver - Calling with args: ('junos',), {}
+2017-10-10 09:50:15,791 - napalm - DEBUG - get_network_driver - Successful
+2017-10-10 09:50:15,791 - napalm - DEBUG - __init__ - Calling with args: (<class 'napalm_junos.junos.JunOSDriver'>, '172.30.177.170', 'pytraining'), {'password': u'*******', 'optional_args': {}, 'timeout': 60}
+2017-10-10 09:50:15,791 - napalm - DEBUG - __init__ - Successful
+2017-10-10 09:50:15,791 - napalm - DEBUG - pre_connection_tests - Calling with args: (<napalm_junos.junos.JunOSDriver object at 0x7fc7d7523e50>,), {}
+2017-10-10 09:50:15,792 - napalm - DEBUG - open - Calling with args: (<napalm_junos.junos.JunOSDriver object at 0x7fc7d7523e50>,), {}
+2017-10-10 09:50:17,637 - napalm - DEBUG - open - Successful
+2017-10-10 09:50:17,637 - napalm - DEBUG - connection_tests - Calling with args: (<napalm_junos.junos.JunOSDriver object at 0x7fc7d7523e50>,), {}
+2017-10-10 09:50:17,637 - napalm - DEBUG - get_facts - Calling with args: (<napalm_junos.junos.JunOSDriver object at 0x7fc7d7523e50>,), {}
+2017-10-10 09:50:22,027 - napalm - DEBUG - Gathered facts:
+{
+    "os_version": "17.2R1.13",
+    "uptime": 1883760,
+    "interface_list": [
+        "lc-0/0/0",
+        "pfe-0/0/0",
+        "pfh-0/0/0",
+        "xe-0/0/0",
+        "xe-0/0/1",
+        "xe-0/0/2",
+        "xe-0/0/3",
+        "ge-1/0/0",
+        "ge-1/0/1",
+        "ge-1/0/2",
+        "ge-1/0/3",
+        "ge-1/0/4",
+        "ge-1/0/5",
+        "ge-1/0/6",
+        "ge-1/0/7",
+        "ge-1/0/8",
+        "ge-1/0/9",
+        "ge-1/0/10",
+        "ge-1/0/11",
+        "ge-1/1/0",
+        "ge-1/1/1",
+        "ge-1/1/2",
+        "ge-1/1/3",
+        "ge-1/1/4",
+        "ge-1/1/5",
+        "ge-1/1/6",
+        "ge-1/1/7",
+        "ge-1/1/8",
+        "ge-1/1/9",
+        "ge-1/1/10",
+        "ge-1/1/11",
+        "ge-1/2/0",
+        "ge-1/2/1",
+        "ge-1/2/2",
+        "ge-1/2/3",
+        "ge-1/2/4",
+        "ge-1/2/5",
+        "ge-1/2/6",
+        "ge-1/2/7",
+        "ge-1/2/8",
+        "ge-1/2/9",
+        "ge-1/2/10",
+        "ge-1/2/11",
+        "ge-1/3/0",
+        "ge-1/3/1",
+        "ge-1/3/2",
+        "ge-1/3/3",
+        "ge-1/3/4",
+        "ge-1/3/5",
+        "ge-1/3/6",
+        "ge-1/3/7",
+        "ge-1/3/8",
+        "ge-1/3/9",
+        "ge-1/3/10",
+        "ge-1/3/11",
+        ".local.",
+        "cbp0",
+        "demux0",
+        "dsc",
+        "em0",
+        "em1",
+        "esi",
+        "fxp0",
+        "gre",
+        "ipip",
+        "irb",
+        "jsrv",
+        "lo0",
+        "lsi",
+        "me0",
+        "mtun",
+        "pimd",
+        "pime",
+        "pip0",
+        "pp0",
+        "rbeb",
+        "tap",
+        "vtep"
+    ],
+    "vendor": "Juniper",
+    "serial_number": "E3061",
+    "model": "MX80-48T",
+    "hostname": "mx80-17",
+    "fqdn": "mx80-17.poc-nl.jnpr.net"
+}
+{
+    "os_version": "17.2R1.13",
+    "uptime": 1883760,
+    "interface_list": [
+        "lc-0/0/0",
+        "pfe-0/0/0",
+        "pfh-0/0/0",
+        "xe-0/0/0",
+        "xe-0/0/1",
+        "xe-0/0/2",
+        "xe-0/0/3",
+        "ge-1/0/0",
+        "ge-1/0/1",
+        "ge-1/0/2",
+        "ge-1/0/3",
+        "ge-1/0/4",
+        "ge-1/0/5",
+        "ge-1/0/6",
+        "ge-1/0/7",
+        "ge-1/0/8",
+        "ge-1/0/9",
+        "ge-1/0/10",
+        "ge-1/0/11",
+        "ge-1/1/0",
+        "ge-1/1/1",
+        "ge-1/1/2",
+        "ge-1/1/3",
+        "ge-1/1/4",
+        "ge-1/1/5",
+        "ge-1/1/6",
+        "ge-1/1/7",
+        "ge-1/1/8",
+        "ge-1/1/9",
+        "ge-1/1/10",
+        "ge-1/1/11",
+        "ge-1/2/0",
+        "ge-1/2/1",
+        "ge-1/2/2",
+        "ge-1/2/3",
+        "ge-1/2/4",
+        "ge-1/2/5",
+        "ge-1/2/6",
+        "ge-1/2/7",
+        "ge-1/2/8",
+        "ge-1/2/9",
+        "ge-1/2/10",
+        "ge-1/2/11",
+        "ge-1/3/0",
+        "ge-1/3/1",
+        "ge-1/3/2",
+        "ge-1/3/3",
+        "ge-1/3/4",
+        "ge-1/3/5",
+        "ge-1/3/6",
+        "ge-1/3/7",
+        "ge-1/3/8",
+        "ge-1/3/9",
+        "ge-1/3/10",
+        "ge-1/3/11",
+        ".local.",
+        "cbp0",
+        "demux0",
+        "dsc",
+        "em0",
+        "em1",
+        "esi",
+        "fxp0",
+        "gre",
+        "ipip",
+        "irb",
+        "jsrv",
+        "lo0",
+        "lsi",
+        "me0",
+        "mtun",
+        "pimd",
+        "pime",
+        "pip0",
+        "pp0",
+        "rbeb",
+        "tap",
+        "vtep"
+    ],
+    "vendor": "Juniper",
+    "serial_number": "E3061",
+    "model": "MX80-48T",
+    "hostname": "mx80-17",
+    "fqdn": "mx80-17.poc-nl.jnpr.net"
+}
+2017-10-10 09:50:22,029 - napalm - DEBUG - get_facts - Successful
+2017-10-10 09:50:22,030 - napalm - DEBUG - method - Calling with args: (<napalm_junos.junos.JunOSDriver object at 0x7fc7d7523e50>, 'cli'), {u'commands': ['show  version']}
+2017-10-10 09:50:22,030 - napalm - DEBUG - cli - Attempting to resolve method
+2017-10-10 09:50:22,030 - napalm - DEBUG - cli - Attempting to call method with kwargs: {u'commands': ['show  version']}
+2017-10-10 09:50:23,110 - napalm - DEBUG - cli - Response
+{
+    "show  version": "\nHostname: mx80-17\nModel: mx80-48t\nJunos: 17.2R1.13\nJUNOS Base OS boot [17.2R1.13]\nJUNOS Base OS Software Suite [17.2R1.13]\nJUNOS Crypto Software Suite [17.2R1.13]\nJUNOS Packet Forwarding Engine Support (MX80) [17.2R1.13]\nJUNOS Web Management [17.2R1.13]\nJUNOS Online Documentation [17.2R1.13]\nJUNOS SDN Software Suite [17.2R1.13]\nJUNOS Services Application Level Gateways [17.2R1.13]\nJUNOS Services Jflow Container package [17.2R1.13]\nJUNOS Services Stateful Firewall [17.2R1.13]\nJUNOS Services NAT [17.2R1.13]\nJUNOS Services RPM [17.2R1.13]\nJUNOS Services Captive Portal and Content Delivery Container package [17.2R1.13]\nJUNOS Macsec Software Suite [17.2R1.13]\nJUNOS Services Crypto [17.2R1.13]\nJUNOS Services IPSec [17.2R1.13]\nJUNOS DP Crypto Software Software Suite [17.2R1.13]\nJUNOS py-base-powerpc [17.2R1.13]\nJUNOS py-extensions-powerpc [17.2R1.13]\nJUNOS jsd [powerpc-17.2R1.13-jet-1]\nJUNOS Kernel Software Suite [17.2R1.13]\nJUNOS Routing Software Suite [17.2R1.13]\n"
+}
+2017-10-10 09:50:23,111 - napalm - DEBUG - method - Successful
+2017-10-10 09:50:23,111 - napalm - DEBUG - close - Calling with args: (<napalm_junos.junos.JunOSDriver object at 0x7fc7d7523e50>,), {}
+2017-10-10 09:50:23,247 - napalm - DEBUG - close - Successful
+2017-10-10 09:50:23,247 - napalm - DEBUG - post_connection_tests - Calling with args: (<napalm_junos.junos.JunOSDriver object at 0x7fc7d7523e50>,), {}
+```
+
 
 ## How to use NAPALM with Ansible 
 For help with Ansible you can refer to https://github.com/ksator/ansible-training-for-junos-automation 
