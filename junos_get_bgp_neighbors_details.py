@@ -17,6 +17,10 @@ with junos_driver(**junos_device) as junos:
   print('-'*60)
   print junos.get_bgp_neighbors_detail()['global'][104][0]['connection_state']
   print junos.get_bgp_neighbors_detail()['global'][110][0]['connection_state']
+  print('-'*60)
+  for item in junos.get_bgp_neighbors_detail()['global']:
+    print junos.get_bgp_neighbors_detail()['global'][item][0]['connection_state']
+
 
 '''
 # python junos_get_bgp_neighbors_details.py
@@ -145,6 +149,10 @@ with junos_driver(**junos_device) as junos:
 ------------------------------------------------------------
 Established
 Established
+------------------------------------------------------------
+Established
+Established
+
 '''
 
 
