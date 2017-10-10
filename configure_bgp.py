@@ -1,6 +1,7 @@
 from napalm_base import get_network_driver
 from yaml import load
 from jinja2 import Template
+import time
 
 # getting template
 f=open('bgp.j2')
