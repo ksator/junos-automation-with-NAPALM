@@ -11,7 +11,7 @@ You can use NAPALM with:
 - [SaltStack](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/README.md#how-to-use-napalm-with-saltstack)
 
 
-[NAPALM source code](https://github.com/napalm-automation/napalm)
+[NAPALM source code](https://github.com/napalm-automation/napalm)  
 [NAPALM doc](https://napalm.readthedocs.io/en/latest/index.html)  
 
 ## How to use NAPALM with Python
