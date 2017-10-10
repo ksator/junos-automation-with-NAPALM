@@ -162,11 +162,10 @@ For more examples, you can look at the python scripts at the [root of the reposi
     - https://www.dravetech.com/blog/2016/05/06/oc-napalm.html
 
 ### Examples: 
-- [Parse native configuration and return and OpenConfig object](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/native_to_openconfig.py)
-- [Translate OpenConfig to native configuration](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/openconfig_to_native.py)
+- Parse native configuration and return and OpenConfig object: [native_to_openconfig.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/native_to_openconfig.py)
+- Translate OpenConfig to native configuration: [openconfig_to_native.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/openconfig_to_native.py)
 
 ## How to use NAPALM with CLI
-
 
 ### Help  
 To get the help, run this command:  
