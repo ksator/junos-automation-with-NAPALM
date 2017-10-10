@@ -432,13 +432,187 @@ napalm --help
 ```
 ### Configuration  
 
-Example with dry run:
 ```
-# napalm --user pytraining --password Poclab123 --vendor junos 172.30.177.170 configure hostname_config.txt --strategy merge --dry-run
-[edit system]
--  host-name mx80-17;
-+  host-name newhostname;
+# napalm --user pytraining --password Poclab123 --vendor junos 172.30.179.95 call get_bgp_config
+{
+    "underlay": {
+        "neighbors": {
+            "192.168.0.0": {
+                "export_policy": "",
+                "remote_as": 104,
+                "route_reflector_client": false,
+                "prefix_limit": {},
+                "local_as": 0,
+                "nhs": false,
+                "import_policy": "",
+                "local_address": "",
+                "authentication_key": "",
+                "description": ""
+            }
+        },
+        "export_policy": "bgp-out",
+        "remote_as": 0,
+        "description": "",
+        "prefix_limit": {},
+        "local_as": 109,
+        "multihop_ttl": 0,
+        "apply_groups": [],
+        "local_address": "",
+        "remove_private_as": false,
+        "multipath": true,
+        "type": "external",
+        "import_policy": "bgp-in"
+    }
+}
 ```
+dry run:
+```
+# napalm --user pytraining --password Poclab123 --vendor junos 172.30.179.95 configure bgp_config.txt --strategy merge --dry-run
+[edit protocols bgp group underlay]
+      neighbor 192.168.0.0 { ... }
++     neighbor 192.168.0.4 {
++         peer-as 110;
++     }
+```
+```
+# napalm --user pytraining --password Poclab123 --vendor junos 172.30.179.95 call get_bgp_config
+{
+    "underlay": {
+        "neighbors": {
+            "192.168.0.0": {
+                "export_policy": "",
+                "remote_as": 104,
+                "route_reflector_client": false,
+                "prefix_limit": {},
+                "local_as": 0,
+                "nhs": false,
+                "import_policy": "",
+                "local_address": "",
+                "authentication_key": "",
+                "description": ""
+            }
+        },
+        "export_policy": "bgp-out",
+        "remote_as": 0,
+        "description": "",
+        "prefix_limit": {},
+        "local_as": 109,
+        "multihop_ttl": 0,
+        "apply_groups": [],
+        "local_address": "",
+        "remove_private_as": false,
+        "multipath": true,
+        "type": "external",
+        "import_policy": "bgp-in"
+    }
+}
+```
+```
+# napalm --user pytraining --password Poclab123 --vendor junos 172.30.179.95 configure bgp_config.txt --strategy merge
+[edit protocols bgp group underlay]
+      neighbor 192.168.0.0 { ... }
++     neighbor 192.168.0.4 {
++         peer-as 110;
++     }
+```
+```
+# napalm --user pytraining --password Poclab123 --vendor junos 172.30.179.95 call get_bgp_config
+{
+    "underlay": {
+        "neighbors": {
+            "192.168.0.0": {
+                "export_policy": "",
+                "remote_as": 104,
+                "route_reflector_client": false,
+                "prefix_limit": {},
+                "local_as": 0,
+                "nhs": false,
+                "import_policy": "",
+                "local_address": "",
+                "authentication_key": "",
+                "description": ""
+            },
+            "192.168.0.4": {
+                "export_policy": "",
+                "remote_as": 110,
+                "route_reflector_client": false,
+                "prefix_limit": {},
+                "local_as": 0,
+                "nhs": false,
+                "import_policy": "",
+                "local_address": "",
+                "authentication_key": "",
+                "description": ""
+            }
+        },
+        "export_policy": "bgp-out",
+        "remote_as": 0,
+        "description": "",
+        "prefix_limit": {},
+        "local_as": 109,
+        "multihop_ttl": 0,
+        "apply_groups": [],
+        "local_address": "",
+        "remove_private_as": false,
+        "multipath": true,
+        "type": "external",
+        "import_policy": "bgp-in"
+    }
+}
+```
+```
+# napalm --user pytraining --password Poclab123 --vendor junos 172.30.179.95 call get_bgp_neighbors
+{
+    "global": {
+        "router_id": "192.179.0.95",
+        "peers": {
+            "192.168.0.0": {
+                "is_enabled": true,
+                "uptime": 4559588,
+                "remote_as": 104,
+                "address_family": {
+                    "ipv4": {
+                        "sent_prefixes": 5,
+                        "accepted_prefixes": 5,
+                        "received_prefixes": 5
+                    },
+                    "ipv6": {
+                        "sent_prefixes": -1,
+                        "accepted_prefixes": -1,
+                        "received_prefixes": -1
+                    }
+                },
+                "remote_id": "192.179.0.74",
+                "local_as": 109,
+                "is_up": true,
+                "description": ""
+            },
+            "192.168.0.4": {
+                "is_enabled": true,
+                "uptime": 16,
+                "remote_as": 110,
+                "address_family": {
+                    "ipv4": {
+                        "sent_prefixes": 6,
+                        "accepted_prefixes": 6,
+                        "received_prefixes": 6
+                    },
+                    "ipv6": {
+                        "sent_prefixes": -1,
+                        "accepted_prefixes": -1,
+                        "received_prefixes": -1
+                    }
+                },
+                "remote_id": "192.179.0.73",
+                "local_as": 109,
+                "is_up": true,
+                "description": ""
+            }
+        }
+    }
+}
+```
+
 ### Debug
 ```
 # napalm --debug --user pytraining --password Poclab123 --vendor junos 172.30.177.170 call cli --method-kwargs "commands=['show  version']"
