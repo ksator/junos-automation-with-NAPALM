@@ -1,0 +1,10 @@
+protocols {
+    bgp {
+        group underlay {
+            neighbor 192.168.0.4 {
+                peer-as 110;
+            }
+        }
+    }
+}
+
