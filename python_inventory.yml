@@ -1,11 +1,11 @@
 ---
-ex4200-7:
+ex4200_7:
     ip: 172.30.179.107
-    vars: host_vars/ex4200-7.yml
-ex4200-8: 
+    vars: host_vars/ex4200_7.yml
+ex4200_8: 
     ip: 172.30.179.108
-    vars: host_vars/ex4200-8.yml
-ex4200-12: 
+    vars: host_vars/ex4200_8.yml
+ex4200_12: 
     ip: 172.30.179.112
-    vars: host_vars/ex4200-12.yml
+    vars: host_vars/ex4200_12.yml
 
