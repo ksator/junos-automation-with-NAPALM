@@ -155,6 +155,7 @@ For more examples, you can look at the python scripts at the [root of the reposi
 - [junos_get_lldp_neighbors.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/junos_get_lldp_neighbors.py)
 - [configure_hostname.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/configure_hostname.py)
 - [configure_bgp.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/configure_bgp.py)
+- [configure_bgp_topology.py](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/configure_bgp_topology.py)
 
 ## NAPALM and OpenConfig
 
