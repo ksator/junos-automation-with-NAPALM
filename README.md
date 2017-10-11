@@ -10,6 +10,7 @@ You can use NAPALM with:
 - [StackStorm](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/README.md#how-to-use-the-napalm-pack-for-stackstorm)
 - [SaltStack](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/README.md#how-to-use-napalm-with-saltstack)
 
+## Documentation
 
 [NAPALM source code](https://github.com/napalm-automation/napalm)  
 [NAPALM doc](https://napalm.readthedocs.io/en/latest/index.html)  
