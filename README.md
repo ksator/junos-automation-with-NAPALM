@@ -12,6 +12,7 @@ You can use NAPALM with:
 - [SaltStack](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/README.md#how-to-use-napalm-with-saltstack)
 
 ## NAPALM and OpenConfig
+There is some OpenConfig support with NAPAM. Please refer to this [section](https://github.com/ksator/junos-automation-with-NAPALM/blob/master/README.md#napalm-and-openconfig) for the details.  
 
 ## NAPALM Documentation
 
