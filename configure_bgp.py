@@ -10,7 +10,7 @@ f.close()
 bgp_template=Template(s)
 
 # getting variables
-f=open('ex4200_7_bgp.yml')
+f=open('host_vars/ex4200_7.yml')
 s=f.read()
 f.close()
 bgp_vars_ex4200_7=load(s)
