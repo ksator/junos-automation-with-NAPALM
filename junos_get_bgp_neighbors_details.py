@@ -19,7 +19,8 @@ with junos_driver(**junos_device) as junos:
   print junos.get_bgp_neighbors_detail()['global'][110][0]['connection_state']
   print('-'*60)
   for item in junos.get_bgp_neighbors_detail()['global']:
-    print junos.get_bgp_neighbors_detail()['global'][item][0]['connection_state']
+    print (junos.get_bgp_neighbors_detail()['global'][item][0]['remote_address'] + ' connection is ' + junos.get_bgp_neighbors_detail()['global'][item][0]['connection_state'])
+
 
 
 '''
@@ -150,9 +151,8 @@ with junos_driver(**junos_device) as junos:
 Established
 Established
 ------------------------------------------------------------
-Established
-Established
-
+192.168.0.0 connection is Established
+192.168.0.4 connection is Established
 '''
 
 
