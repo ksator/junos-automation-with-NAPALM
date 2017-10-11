@@ -129,6 +129,11 @@ system {
  u'uptime': 4527600,
  u'vendor': u'Juniper'}
 ```
+```
+>>> print device.get_facts()['hostname']
+newhostname
+
+```
 ### Close the connection to the device
 ```
 >>> device.is_alive()
