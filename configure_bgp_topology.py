@@ -2,6 +2,7 @@ from napalm_base import get_network_driver
 from yaml import load
 from jinja2 import Template
 import time
+import os
 
 # getting template
 f=open('bgp.j2')
@@ -29,6 +30,17 @@ python_inventory=load(inventory_s)
 #     print python_inventory[item]['vars']
 #     print '-'*60
 
+
+# make sure the directory render exists
+cwd = os.getcwd()
+# cwd
+render_directory = os.path.dirname(cwd + "/render/")
+# render_directory
+# os.path.exists(render_directory)
+if not os.path.exists(render_directory):
+    os.makedirs(render_directory)
+# os.path.exists(render_directory)
+
 def change_configuration(device, configuration):
        device.load_merge_candidate(filename=configuration)
        print(device.compare_config())
@@ -36,20 +48,20 @@ def change_configuration(device, configuration):
 
 for device_item in python_inventory:
     print '-'*60
-    print ('rendering the template for device ' + device_item) 
+    print ('rendering the template for device ' + device_item)
     f=open(python_inventory[device_item]['vars'])
     s=f.read()
     f.close()
     vars=load(s)
-    bgp_conf=open(device_item + '_bgp.txt','w')
+    bgp_conf=open(render_directory + '/' + device_item + '_bgp.txt','w')
     bgp_conf.write(bgp_template.render(vars))
     bgp_conf.close()
     print '-'*60
-    print ('configuring the device ' + device_item) 
+    print ('configuring the device ' + device_item)
     junos_driver = get_network_driver('junos')
     junos_device = junos_driver(hostname=python_inventory[device_item]['ip'], username='pytraining', password='Poclab123', optional_args={'port': 830})
     junos_device.open()
-    change_configuration(junos_device, device_item + '_bgp.txt')
+    change_configuration(junos_device, render_directory + '/' + device_item + '_bgp.txt')
     junos_device.close()
 
 print '-'*60
