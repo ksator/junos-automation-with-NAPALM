@@ -1,3 +1,4 @@
+from my_repo_functions import change_configuration
 from napalm_base import get_network_driver
 from yaml import load
 from jinja2 import Template
@@ -40,12 +41,6 @@ render_directory = os.path.dirname(cwd + "/render/")
 if not os.path.exists(render_directory):
     os.makedirs(render_directory)
 # os.path.exists(render_directory)
-
-def change_configuration(device, configuration):
-       device.load_merge_candidate(filename=configuration)
-       print(device.compare_config())
-       device.commit_config()
-       
 
 # render the template and configure the devices
 for device_item in python_inventory:
