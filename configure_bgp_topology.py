@@ -45,7 +45,9 @@ def change_configuration(device, configuration):
        device.load_merge_candidate(filename=configuration)
        print(device.compare_config())
        device.commit_config()
+       
 
+# render the template and configure the devices
 for device_item in python_inventory:
     print '-'*60
     print ('rendering the template for device ' + device_item)
@@ -64,6 +66,7 @@ for device_item in python_inventory:
     change_configuration(junos_device, render_directory + '/' + device_item + '_bgp.txt')
     junos_device.close()
 
+# audit the devices
 print '-'*60
 print ('audit will start in 15 seconds')
 time.sleep(15)
