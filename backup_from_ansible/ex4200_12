@@ -1,5 +1,5 @@
 
-## Last commit: 2017-10-22 16:06:41 CEST by pytraining
+## Last commit: 2017-10-22 19:53:34 CEST by pytraining
 version 15.1R2.9;
 groups {
     access {
@@ -119,22 +119,6 @@ system {
     }
 }
 interfaces {
-    ge-0/0/0 {
-        unit 0 {
-            description ex4200-7;
-            family inet {
-                address 192.168.10.0/31;
-            }
-        }
-    }
-    ge-0/0/1 {
-        unit 0 {
-            description ex4200-8;
-            family inet {
-                address 192.168.10.3/31;
-            }
-        }
-    }
     lo0 {
         unit 0 {
             family inet {
@@ -188,27 +172,6 @@ routing-options {
     autonomous-system 100;
     forwarding-table {
         export bgp-ecmp;
-    }
-}
-protocols {
-    bgp {
-        group underlay {
-            type external;
-            import bgp-in;
-            export bgp-out;
-            local-as 204;
-            multipath multiple-as;
-            neighbor 192.168.10.1 {
-                peer-as 209;
-            }
-            neighbor 192.168.10.2 {
-                peer-as 210;
-            }
-        }
-    }
-    lldp {
-        interface ge-0/0/0.0;
-        interface ge-0/0/1.0;
     }
 }
 policy-options {

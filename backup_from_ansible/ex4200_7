@@ -1,5 +1,5 @@
 
-## Last changed: 2017-10-22 16:19:20 CEST
+## Last changed: 2017-10-22 19:54:11 CEST
 version 12.3R11.2;
 groups {
     access {
@@ -138,22 +138,6 @@ system {
     }
 }
 interfaces {
-    ge-0/0/0 {
-        unit 0 {
-            description ex4200-12;
-            family inet {
-                address 192.168.10.1/31;
-            }
-        }
-    }
-    ge-0/0/1 {
-        unit 0 {
-            description ex4200-8;
-            family inet {
-                address 192.168.10.5/31;
-            }
-        }
-    }
     lo0 {
         unit 0 {
             family inet {
@@ -207,27 +191,6 @@ routing-options {
     autonomous-system 100;
     forwarding-table {
         export bgp-ecmp;
-    }
-}
-protocols {
-    bgp {
-        group underlay {
-            type external;
-            import bgp-in;
-            export bgp-out;
-            local-as 209;
-            multipath multiple-as;
-            neighbor 192.168.10.4 {
-                peer-as 210;
-            }
-            neighbor 192.168.10.0 {
-                peer-as 204;
-            }
-        }
-    }
-    lldp {
-        interface ge-0/0/1.0;
-        interface ge-0/0/0.0;
     }
 }
 policy-options {

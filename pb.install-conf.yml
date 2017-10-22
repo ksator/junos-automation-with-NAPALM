@@ -3,6 +3,8 @@
   hosts: EX4200
   connection: local
   gather_facts: no
+  tags: 
+  - configuration
   tasks:
 
   - name: Render BGP configuration for junos devices
@@ -20,6 +22,22 @@
       diff_file: "diff/{{ inventory_hostname }}"
       archive_file: "backup_from_ansible/{{ inventory_hostname }}"
 
+
+- name: wait for peers to establish connections
+  hosts: localhost
+  gather_facts: no
+  tasks:
+
+  - pause: seconds=35
+
+- name: audit junos devices with ansible-napalm
+  hosts: EX4200
+  connection: local
+  gather_facts: no
+  tags: 
+  - audit
+  tasks:
+
   - name: Render validation files for junos devices
     template:
       src: "{{playbook_dir}}/validate.j2"
@@ -29,4 +47,5 @@
     napalm_validate:
       provider: "{{ junos_provider }}"
       validation_file: "{{playbook_dir}}/validation/{{ inventory_hostname }}.yml"
+
 

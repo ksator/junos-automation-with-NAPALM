@@ -1,0 +1,39 @@
+[edit interfaces]
++   ge-0/0/0 {
++       unit 0 {
++           description ex4200-7;
++           family inet {
++               address 192.168.10.4/31;
++           }
++       }
++   }
++   ge-0/0/1 {
++       unit 0 {
++           description ex4200-12;
++           family inet {
++               address 192.168.10.2/31;
++           }
++       }
++   }
+[edit]
++  protocols {
++      bgp {
++          group underlay {
++              type external;
++              import bgp-in;
++              export bgp-out;
++              local-as 210;
++              multipath multiple-as;
++              neighbor 192.168.10.5 {
++                  peer-as 209;
++              }
++              neighbor 192.168.10.3 {
++                  peer-as 204;
++              }
++          }
++      }
++      lldp {
++          interface ge-0/0/0.0;
++          interface ge-0/0/1.0;
++      }
++  }
