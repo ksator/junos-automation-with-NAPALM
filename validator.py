@@ -37,6 +37,9 @@ for device_item in python_inventory:
     junos_device = junos_driver(hostname=python_inventory[device_item]['ip'], username='pytraining', password='Poclab123', optional_args={'port': 830})
     junos_device.open()
     pprint(junos_device.compliance_report(validation_directory + '/' + device_item + '.yml'))
+    print '-'*60
+    print ('the device ' + device_item + " complies:")
+    print (junos_device.compliance_report(validation_directory + '/' + device_item + '.yml')['complies'])
     junos_device.close()
 
 """
@@ -53,6 +56,9 @@ auditing the device ex4200_8
                                                       u'nested': True}}},
  u'skipped': []}
 ------------------------------------------------------------
+the device ex4200_8 complies:
+True
+------------------------------------------------------------
 rendering the template validate.j2 for device ex4200_7
 ------------------------------------------------------------
 auditing the device ex4200_7
@@ -64,6 +70,9 @@ auditing the device ex4200_7
                                                       u'nested': True}}},
  u'skipped': []}
 ------------------------------------------------------------
+the device ex4200_7 complies:
+True
+------------------------------------------------------------
 rendering the template validate.j2 for device ex4200_12
 ------------------------------------------------------------
 auditing the device ex4200_12
@@ -74,6 +83,10 @@ auditing the device ex4200_12
                               u'present': {'inet.0': {u'complies': True,
                                                       u'nested': True}}},
  u'skipped': []}
+------------------------------------------------------------
+the device ex4200_12 complies:
+True
+
 """
 """
 # ls validation
