@@ -39,3 +39,67 @@ for device_item in python_inventory:
     pprint(junos_device.compliance_report(validation_directory + '/' + device_item + '.yml'))
     junos_device.close()
 
+"""
+# python validator.py
+------------------------------------------------------------
+rendering the template validate.j2 for device ex4200_8
+------------------------------------------------------------
+auditing the device ex4200_8
+{u'complies': True,
+ 'get_bgp_neighbors_detail': {u'complies': True,
+                              u'extra': [],
+                              u'missing': [],
+                              u'present': {'inet.0': {u'complies': True,
+                                                      u'nested': True}}},
+ u'skipped': []}
+------------------------------------------------------------
+rendering the template validate.j2 for device ex4200_7
+------------------------------------------------------------
+auditing the device ex4200_7
+{u'complies': True,
+ 'get_bgp_neighbors_detail': {u'complies': True,
+                              u'extra': [],
+                              u'missing': [],
+                              u'present': {'inet.0': {u'complies': True,
+                                                      u'nested': True}}},
+ u'skipped': []}
+------------------------------------------------------------
+rendering the template validate.j2 for device ex4200_12
+------------------------------------------------------------
+auditing the device ex4200_12
+{u'complies': True,
+ 'get_bgp_neighbors_detail': {u'complies': True,
+                              u'extra': [],
+                              u'missing': [],
+                              u'present': {'inet.0': {u'complies': True,
+                                                      u'nested': True}}},
+ u'skipped': []}
+"""
+"""
+# ls validation
+ex4200_12.yml  ex4200_7.yml  ex4200_8.yml
+"""
+"""
+# more validation/ex4200_8.yml
+- get_bgp_neighbors_detail:
+    inet.0:
+
+      209:
+       - connection_state: Established
+
+      204:
+       - connection_state: Established
+"""
+"""
+# more validation/ex4200_7.yml
+- get_bgp_neighbors_detail:
+    inet.0:
+
+      210:
+       - connection_state: Established
+
+      204:
+       - connection_state: Established
+
+"""
+
