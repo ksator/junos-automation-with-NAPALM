@@ -28,7 +28,7 @@
   gather_facts: no
   tasks:
 
-  - pause: seconds=35
+  - pause: seconds=18
 
 - name: audit junos devices with ansible-napalm
   hosts: EX4200
@@ -47,5 +47,7 @@
     napalm_validate:
       provider: "{{ junos_provider }}"
       validation_file: "{{playbook_dir}}/validation/{{ inventory_hostname }}.yml"
-
-
+    register: result
+    delay: 10
+    retries: 3
+    until: result | success
