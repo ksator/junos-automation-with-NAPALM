@@ -1,0 +1,6 @@
+- get_bgp_neighbors_detail:
+    inet.0:
+{% for item in neighbors %}
+      {{item.asn }}: 
+       - connection_state: Established
+{% endfor %}

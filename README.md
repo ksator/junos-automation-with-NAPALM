@@ -861,10 +861,13 @@ dry run:
 
 ## How to use NAPALM with Ansible 
 For help with Ansible you can refer to [this repo](https://github.com/ksator/ansible-training-for-junos-automation) 
+Source code: https://github.com/napalm-automation/napalm-ansible
+
 
 ## How to use the NAPALM pack for StackStorm
 - For help with StackStorm you can refer to [this repo](https://github.com/ksator/junos-automation-with-stackstorm) 
 - For help regarding the NAPALM pack for StackStorm you can refer to [this doc](https://github.com/ksator/junos-automation-with-stackstorm/wiki/06.-napalm-pack)
+
 
 ## How to use NAPALM with SaltStack
 - For help with SaltStack you can refer to [this repo](https://github.com/ksator/junos-automation-with-saltstack)

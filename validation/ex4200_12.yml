@@ -1,0 +1,6 @@
+- get_bgp_neighbors_detail:
+    inet.0:
+      209: 
+       - connection_state: Established
+      210: 
+       - connection_state: Established

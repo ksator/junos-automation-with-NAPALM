@@ -1,0 +1,9 @@
+junos_provider: 
+ hostname: "{{ ip }}"
+ username: "pytraining"
+ password: "Poclab123"
+ dev_os: "junos"
+
+optional_values: 
+ port: 830
+
