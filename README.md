@@ -1,8 +1,6 @@
 NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support) is a Python library to interact with different network operating systems.  
 
-You can use NAPALM with CLI, Python, Ansible, StackStorm, SaltStack.   
-
-This repo is about how to use NAPALM to automate junos using: 
+This repo is about how to use NAPALM to automate Junos using: 
 - NAPALM CLI
 - NAPALM python library
 - NAPALM Ansible modules
