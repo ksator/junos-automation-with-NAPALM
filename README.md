@@ -868,7 +868,11 @@ For help with Ansible you can refer to [this repo](https://github.com/ksator/ans
 
 ## How to use NAPALM with SaltStack
 - For help with SaltStack you can refer to [this repo](https://github.com/ksator/junos-automation-with-saltstack)
-- For help with SaltStack and NAPALM you can refer to [this presentation](https://www.nanog.org/sites/default/files/NANOG68%20Network%20Automation%20with%20Salt%20and%20NAPALM%20Mircea%20Ulinic%20Cloudflare%20(1).pdf) 
+- For help with SaltStack and NAPALM you can refer to [this presentation](https://www.nanog.org/sites/default/files/NANOG68%20Network%20Automation%20with%20Salt%20and%20NAPALM%20Mircea%20Ulinic%20Cloudflare%20(1).pdf)
+
+## NAPALM-logs
+https://mirceaulinic.net/2017-10-19-event-driven-network-automation/
+ 
 
 
 
